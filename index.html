@@ -14,6 +14,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+
+
 <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
@@ -42,19 +44,25 @@ color:white;
 
 /* First image (Logo. Full height) */
 .bgimg-1 {
-    background-image: url('http://www.erikzeng.com/earth-view-from-satellite-space-systems-cover.jpg');
+    background-image: url('img/earth-view-from-satellite-space-systems-cover.jpg');
     min-height: 100%;
 }
 
-/* Second image (Portfolio) */
+/* Second image (Skills) */
 .bgimg-2 {
-    background-image: url("/w3images/parallax2.jpg");
+    background-image: url("img/1490701337436.jpg");
     min-height: 400px;
 }
 
-/* Third image (Contact) */
+/* Second image (Projects) */
 .bgimg-3 {
-    background-image: url("/w3images/parallax3.jpg");
+    background-image: url("img/folders-facebook-cover-timeline-banner-for-fb.jpg");
+    min-height: 400px;
+}
+
+/* Fourth image (Contact) */
+.bgimg-4 {
+    background-image: url("img/contact3.jpg");
     min-height: 400px;
 }
 
@@ -134,6 +142,7 @@ color:white;
             </ul>
           </li>
           <li><a href="#section3">Projects</a></li>
+		  <li><a href="#section4">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -151,23 +160,26 @@ color:white;
 <!-- Container (About Section) -->
 <div class="w3-content w3-container w3-padding-64" id="section1">
   <h3 class="w3-center">ABOUT ME</h3>
-  <p class="w3-center"><em>I love photography</em></p>
-  <p>We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-    qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-  <div class="w3-row">
+  <p class="w3-center"><em>"The road to success is always under construction"</em></p>
+	<div class="w3-row">
     <div class="w3-col m6 w3-center w3-padding-large">
-      <p><b><i class="fa fa-user w3-margin-right"></i>Erik Z</b></p><br>
-      <img src="/w3images/avatar_hat.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
+      <img src="img/thumbnail_hdImg_5780e61485bb9d54a71570e1af7c4d711480396017404.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off slideanim" alt="Photo of Me" width="500" height="333">
     </div>
-
-    <!-- Hide this text on small devices -->
-    <div class="w3-col m6 w3-hide-small w3-padding-large">
-      <p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <div class="w3-col m6 w3-padding-large">
+    <p>Welcome to my website! My name is Erik Zeng and I've majored in computer science and minored in mathematics at Ryerson University. I am also a trilingual speaker in English, French, and Mandarin Chinese with an honour in French Immersion from Richview Collegiate Institute. 
+	<br><br>
+	My field of specialization is in full stack web development involving in all stage of SDLC from writing documentation, normalizing/designing RDBMS, setting up a responsive design/mobile friendly UI utilizing frameworks such Bootstrap, dynamically connecting the database through SQL queries and ajax HTTP requests. 
+	<br><br>
+	Currently, I'm seeking challenges that can fully utilize my skills and can help me increase my knowledge, improve my professional disciplines, and gain experience in the IT industry.  
+	</p>
     </div>
-  </div>
+	</div>
+    <p class="w3-center">
+    <button class="w3-btn w3-light-grey w3-padding-large w3-section w3-hover-black w3-center">
+	<a href="ErikZResume.docx" download><i class="fa fa-download"></i> Download Resume</a>
+    </button>
+    </p>
+  <!--
   <p class="w3-large w3-center w3-padding-16">Im really good at:</p>
   <p class="w3-wide"><i class="fa fa-camera"></i>Photography</p>
   <div class="w3-light-grey">
@@ -181,8 +193,10 @@ color:white;
   <div class="w3-light-grey">
     <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:75%">75%</div>
   </div>
+  -->
 </div>
 
+<!--
 <div class="w3-row w3-center w3-dark-grey w3-padding-16">
   <div class="w3-quarter w3-section">
     <span class="w3-xlarge">14+</span><br>
@@ -201,18 +215,19 @@ color:white;
     Meetings
   </div>
 </div>
+-->
 
 <!-- Second Parallax Image with Portfolio Text -->
 <div class="bgimg-2 w3-display-container w3-opacity-min">
   <div class="w3-display-middle">
-    <span class="w3-xxlarge w3-text-white w3-wide">PORTFOLIO</span>
+    <span class="w3-xxlarge w3-text-white w3-wide">TECH SKILLS</span>
   </div>
 </div>
 
 <!-- Container (Portfolio Section) -->
 <div class="w3-content w3-container w3-padding-64" id="section2">
-  <h3 class="w3-center">MY WORK</h3>
-  <p class="w3-center"><em>Here are some of my latest lorem work ipsum tipsum.<br> Click on the images to make them bigger</em></p><br>
+  <h3 class="w3-center">MY SKILLS</h3>
+	<p class="w3-center"><em>Here are some of the programming languages, scripts, markups, frameworks, libraries, APIs, and environment that I'm experienced in.</em></p>
   <div id="reactApp"></div>
 </div>
 
@@ -228,11 +243,11 @@ color:white;
 <!-- Third Parallax Image with Portfolio Text -->
 <div class="bgimg-3 w3-display-container w3-opacity-min">
   <div class="w3-display-middle">
-     <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
+    <span class="w3-xxlarge w3-text-white w3-wide w3-grey w3-padding-xlarge w3-hover-grey">PROJECTS</span>
   </div>
 </div>
 
-<div class="w3-content w3-container w3-padding-64" id="section2">
+<div class="w3-content w3-container w3-padding-64" id="section3">
   <h3 class="w3-center">MY WORK</h3>
   <p class="w3-center"><em>Here are some of my latest work</em></p><br>
 
@@ -260,14 +275,14 @@ color:white;
 </div>
 
 <!-- Third Parallax Image with Portfolio Text -->
-<div class="bgimg-3 w3-display-container w3-opacity-min">
+<div class="bgimg-4 w3-display-container w3-opacity-min">
   <div class="w3-display-middle">
      <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
   </div>
 </div>
 
 <!-- Container (Contact Section) -->
-<div class="w3-content w3-container w3-padding-64" id="section3">
+<div class="w3-content w3-container w3-padding-64" id="section4">
   <h3 class="w3-center">HOW TO REACH ME</h3>
   <p class="w3-center"><em>I'd love to hear from you!</em></p>
 
