@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>W3.CSS Template</title>
+<title>Erik Z's Homepage</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -17,7 +17,7 @@
 <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
-<script type="text/babel" src="app1.jsx"></script> 
+<script type="text/babel" src="App.jsx"></script> 
 
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
@@ -144,7 +144,7 @@ color:white;
 <!-- First Parallax Image with Logo Text -->
 <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
   <div class="w3-display-middle" style="white-space:nowrap;">
-    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity"> <span class="w3-hide-medium w3-hide-large">MY</span><span class="w3-hide-small">ERIK ZENG'S</span> HOMEPAGE</span>
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity"> <span class="w3-hide-medium w3-hide-large">MY</span><span class="w3-hide-small">ERIK Z'S</span> HOMEPAGE</span>
   </div>
 </div>
 
@@ -157,7 +157,7 @@ color:white;
     qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
   <div class="w3-row">
     <div class="w3-col m6 w3-center w3-padding-large">
-      <p><b><i class="fa fa-user w3-margin-right"></i>My Name</b></p><br>
+      <p><b><i class="fa fa-user w3-margin-right"></i>Erik Z</b></p><br>
       <img src="/w3images/avatar_hat.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
     </div>
 
@@ -283,20 +283,7 @@ color:white;
         <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: zheerikzeng@gmail.com<br>
       </div>
       <p>Let's grab a cup of <i class="fa fa-coffee"></i>, or leave me a message:</p>
-      <form action="/action_page.php" target="_blank">
-        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-          <div class="w3-half">
-            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-          </div>
-          <div class="w3-half">
-            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
-          </div>
-        </div>
-        <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
-        <button class="w3-button w3-black w3-right w3-section" type="submit">
-          <i class="fa fa-paper-plane"></i> SEND MESSAGE
-        </button>
-      </form>
+      <div id="emailForm"></div>
     </div>
   </div>
 </div>
