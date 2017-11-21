@@ -14,7 +14,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
+<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script>
+<link rel="stylesheet/less" type="text/css" href="styles.less?version=1"/>
 
 <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
@@ -35,7 +36,7 @@ color:white;
 }
 
 /* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3 {
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4{
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -133,7 +134,8 @@ color:white;
     <div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
-          <li><a href="#section1">About</a></li>
+          <li><a href="#section1"><i class="fa fa-user" aria-hidden="true"></i> About</a></li>
+		  <!--
   <li class="dropdown" style="display: flex;"><a href="#section2" style="align-items:stretch;">Skills<a class="w3-hide dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a></a>
             <ul class="dropdown-menu">
               <li><a href="javascript:void(0)">Frontend</a></li>
@@ -141,8 +143,10 @@ color:white;
               <li><a href="javascript:void(0)">Backend</a></li>
             </ul>
           </li>
-          <li><a href="#section3">Projects</a></li>
-		  <li><a href="#section4">Contact</a></li>
+		  -->
+          <li><a href="#section2"><i class="fa fa-cogs" aria-hidden="true"></i> Tech</a></li>
+          <li><a href="#section3"><i class="fa fa-list" aria-hidden="true"></i> Projects</a></li>
+		  <li><a href="#section4"><i class="fa fa-envelope" aria-hidden="true"></i> Contact</a></li>
         </ul>
       </div>
     </div>
@@ -150,7 +154,7 @@ color:white;
   </div>
 </nav>  
 
-<!-- First Parallax Image with Logo Text -->
+<!-- First Parallax Image -->
 <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
   <div class="w3-display-middle" style="white-space:nowrap;">
     <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity"> <span class="w3-hide-medium w3-hide-large">MY</span><span class="w3-hide-small">ERIK Z'S</span> HOMEPAGE</span>
@@ -217,7 +221,7 @@ color:white;
 </div>
 -->
 
-<!-- Second Parallax Image with Portfolio Text -->
+<!-- Second Parallax Image -->
 <div class="bgimg-2 w3-display-container w3-opacity-min">
   <div class="w3-display-middle">
     <span class="w3-xxlarge w3-text-white w3-wide">TECH SKILLS</span>
@@ -226,7 +230,7 @@ color:white;
 
 <!-- Container (Portfolio Section) -->
 <div class="w3-content w3-container w3-padding-64" id="section2">
-  <h3 class="w3-center">MY SKILLS</h3>
+  <h3 class="w3-center">MY TECH STACK</h3>
 	<p class="w3-center"><em>Here are some of the programming languages, scripts, markups, frameworks, libraries, APIs, and environment that I'm experienced in.</em></p>
   <div id="reactApp"></div>
 </div>
@@ -240,7 +244,7 @@ color:white;
   </div>
 </div>
 
-<!-- Third Parallax Image with Portfolio Text -->
+<!-- Third Parallax Image -->
 <div class="bgimg-3 w3-display-container w3-opacity-min">
   <div class="w3-display-middle">
     <span class="w3-xxlarge w3-text-white w3-wide w3-grey w3-padding-xlarge w3-hover-grey">PROJECTS</span>
@@ -274,10 +278,10 @@ color:white;
 
 </div>
 
-<!-- Third Parallax Image with Portfolio Text -->
+<!-- 4th Parallax Image -->
 <div class="bgimg-4 w3-display-container w3-opacity-min">
   <div class="w3-display-middle">
-     <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
+     <span class="w3-xxlarge w3-text-light-grey w3-wide">CONTACT</span>
   </div>
 </div>
 

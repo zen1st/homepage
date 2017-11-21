@@ -1,40 +1,23 @@
-class CategoryRow extends React.Component {
-  render() {
-    const category = this.props.category;
-    return (
-      <tr>
-        <th colSpan="2">
-          {category}
-        </th>
-      </tr>
-    );
-  }
-}
-
 class Thumbnail extends React.Component {
   render() {
     const content = this.props.content;
-	/*
+	
 	var overlay;
-	if(content.demoUrl!=null)
-	{
-		overlay += <div className="overlay">;
-		overlay += <div className="hover-content">;
-		
-	}*/
+	
+	if(content.repoUrl!="" || content.demoUrl!=""){
+		var repo = content.repoUrl!="" ? <a href={content.repoUrl} title="Repository"><i className="fa fa-github" aria-hidden="true"></i></a> : "";
+		var demo = content.demoUrl!="" ? <a href={content.demoUrl} title="Demonstration"><i className="fa fa-window-restore" aria-hidden="true"></i></a> : "";
+		overlay = <div className='overlay'>
+					<div className='hover-content'>
+					{repo}{demo}
+					</div></div>;
+	}
 
     return (
     <div className="w3-third w3-container w3-margin-bottom">
-	
 	<div className="w3-display-container">
-      <img src={content.imgUrl} className="thumbnail"/>
-	  
-	  <div className="overlay">
-    	<div className="hover-content">
-		Content
-        </div>
-  	  </div>
-	  
+    <img src={content.imgUrl} className="thumbnail"/>
+	{overlay}
 	</div>
 	<div className="w3-container w3-white w3-center"><p><b>{content.name}</b></p></div>
     </div>
@@ -305,7 +288,7 @@ const CONTENTS = [
 {name: 'jQuery', cat: 'Frontend', desc:"",  imgUrl: 'img/jquery-icon.png', demoUrl:"", repoUrl:""},
 {name: 'TypeScript', cat: 'Frontend', desc:"", imgUrl: 'img/3e2b342616822f8eabc9dd393840db4a.png', demoUrl:"", repoUrl:""},
 {name: 'AngularJS', cat: 'Frontend', desc:"", imgUrl: 'img/angularjs.png', demoUrl:"", repoUrl:""},
-{name: 'Angular', cat: 'Frontend', desc:"", imgUrl: 'img/b3f8b090-dedc-11e6-8252-d9f1e786360b-angular.svg', demoUrl:"", repoUrl:""},
+{name: 'Angular', cat: 'Frontend', desc:"", imgUrl: 'img/b3f8b090-dedc-11e6-8252-d9f1e786360b-angular.svg', demoUrl:"http://www.google.ca", repoUrl:""},
 {name: 'ReactJS', cat: 'Frontend', desc:"", imgUrl: 'img/react-logo-300x289.png', demoUrl:"", repoUrl:""},
 {name: 'Java', cat: 'Backend', desc:"", imgUrl: 'img/3163796423.webp', demoUrl:"", repoUrl:""},
 {name: 'Java Spring', cat: 'Backend', desc:"", imgUrl: 'img/spring-by-pivotal-9066b55828deb3c10e27e609af322c40.png', demoUrl:"", repoUrl:""},
@@ -328,9 +311,17 @@ const CONTENTS = [
 {name: 'Heroku', cat: 'Cloud/Server', desc:"", imgUrl: 'img/heroku-logotype-vertical-purple1.png', demoUrl:"", repoUrl:""},
 {name: 'GoDaddy', cat: 'Cloud/Server', desc:"", imgUrl: 'img/aboutus1.png', demoUrl:"", repoUrl:""},
 {name: 'AWS', cat: 'Cloud/Server', desc:"", imgUrl: 'img/aws-final-logo.png', demoUrl:"", repoUrl:""},
-{name: 'GitHub', cat: 'Cloud/Server', desc:"", imgUrl: 'img/github.png', demoUrl:"", repoUrl:""},
+{name: 'GitHub', cat: 'Cloud/Server', desc:"", imgUrl: 'img/github.png', demoUrl:"", repoUrl:"", demoUrl:"", repoUrl:""},
 {name: 'WordPress', cat: 'Cloud/Server', desc:"", imgUrl: 'img/wordpress-logo-stacked-rgb.png', demoUrl:"", repoUrl:""}
 ];
+
+CONTENTS.sort(function(a, b){
+    var x = a.name.toLowerCase();
+    var y = b.name.toLowerCase();
+    if (x < y) {return -1;}
+    if (x > y) {return 1;}
+    return 0;
+});
 
 ReactDOM.render(
   <FilterableGallery contents={CONTENTS} />,
