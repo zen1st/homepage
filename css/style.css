@@ -1,0 +1,231 @@
+html,body 
+{
+​	height:100%;
+	font-family: "Lato", sans-serif;
+}
+
+#navbar a
+{
+	color:white;
+}
+
+@media screen and (min-width: 600px) 
+{
+	.typewriter
+	{
+	  animation: 
+		typing 3.5s steps(40, end),
+		blink-caret .75s step-end infinite;	
+	}
+}
+
+.typewriter div{
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4{
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+    background-image: url('../img/earth-view-from-satellite-space-systems-cover.jpg');
+    min-height: 100%;
+}
+
+/* Second image (Tech) */
+.bgimg-2 {
+    background-image: url("../img/1490701337436.jpg");
+    min-height: 400px;
+}
+
+/* Second image (Projects) */
+.bgimg-3 {
+    background-image: url("../img/folders-facebook-cover-timeline-banner-for-fb.jpg");
+    min-height: 400px;
+}
+
+/* Fourth image (Contact) */
+.bgimg-4 {
+    background-image: url("../img/contact3.jpg");
+    min-height: 400px;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4{
+        background-attachment: scroll;
+    }
+}
+
+/* Video Parallax (start)*/
+.bgvid-1, #home {
+	/*background-color:rgba(0,0,0,.65);*/
+	height:100%;
+	left:0;
+	position:relative;
+	top:0;
+	transition:background-color 300ms ease;
+	width:100%;
+}
+.fade { background-color:rgba(0,0,0,.85) !important; }
+
+#hero-vid {
+	backface-visibility:hidden;
+	background:url("../img/earth-view-from-satellite-space-systems-cover.jpg") no-repeat scroll 0 0 #000;
+	background-size:cover;
+	bottom:0;
+	height:auto;
+	min-height:100%;
+	min-width:100%;
+	perspective:1000;
+	position:fixed;
+	right:0;
+	width:auto;
+	z-index:-1;
+}
+#state {
+	bottom:0;
+	cursor:pointer;
+	font-size:2.25rem;
+	left:0;
+	line-height:1;
+	padding:2rem 2.5rem 1.65rem;
+	position:absolute;
+}
+/* Media Queries */
+@media only screen and (max-width:768px) {
+	.bgvid-1{height:auto !important;}
+}
+/* Visibility Helpers */
+@media only screen and (min-width:769px) {
+    .visible-mobile,.visible-tablet,.hidden-desktop { display:none !important; }
+}
+@media only screen and (min-width:480px) and (max-width:768px) {
+    .visible-mobile,.hidden-tablet,.visible-desktop { display:none !important; }
+}
+@media only screen and (max-width:479px) {
+    .hidden-mobile,.visible-tablet,.visible-desktop { display:none !important; }
+}
+/* Video Parallax (end)*/
+
+#mainContent {
+	background-color:#ffffff;
+	position:relative;
+	z-index:1;
+}
+
+/* Gallery (start)*/
+.w3-display-container:hover .overlay {
+    height: 20%;
+}
+
+.imgContent
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.imgLoader {
+  position:absolute;
+  border: 6px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 6px solid #3498db;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 1s ease-in-out infinite; /* Safari */
+  animation: spin 1s ease-in-out infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  50% { -webkit-transform: rotate(360deg); }
+  100% { -webkit-transform: rotate(720deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(360deg); }
+  100% { transform: rotate(720deg); }
+}
+
+.thumbnail{
+	object-fit: contain;
+    width: 100%;
+    height: 225px;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 800px) {
+	.thumbnail {
+		height: 250px;
+	}
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+	.thumbnail {
+		height: 375px;
+	}
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #808080;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .4s ease;
+    opacity:0.7;
+}
+.overlay:hover{
+   opacity:1;
+}
+.hover-content {
+    white-space: nowrap; 
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    overflow: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+/* Gallery (end)*/
+
+.mySlides {display:none}
+
+.demo {cursor:pointer}
+
+.w3-wide {letter-spacing: 10px;}
+
+.w3-hover-opacity {cursor: pointer;}

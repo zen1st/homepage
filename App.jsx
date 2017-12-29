@@ -1,9 +1,24 @@
+const Shuffle = window.Shuffle;
+
 class Thumbnail extends React.Component {
-  render() {
+	
+	constructor(props){
+		super(props);
+		this.state = {imgLoaderClass:"imgLoader", imgContentClass:"imgContent", imgOpacity:0};
+	}
+	
+	handleImageLoaded() {
+		setTimeout(function() {this.setState({imgLoaderClass:"", imgContentClass:"", imgOpacity:1}); }.bind(this), 1000);
+	}
+	
+	render() {
     const content = this.props.content;
 	
+	const imgStyle = {
+		opacity:this.state.imgOpacity
+	};
+		
 	var overlay;
-	
 	if(content.repoUrl!="" || content.demoUrl!=""){
 		var repo = content.repoUrl!="" ? <a href={content.repoUrl} title="Repository"><i className="fa fa-github" aria-hidden="true"></i></a> : "";
 		var demo = content.demoUrl!="" ? <a href={content.demoUrl} title="Demonstration"><i className="fa fa-window-restore" aria-hidden="true"></i></a> : "";
@@ -12,11 +27,16 @@ class Thumbnail extends React.Component {
 					{repo}{demo}
 					</div></div>;
 	}
-
+	//console.log(content.cat);
+	//const dataGroups = "['" + content.cat + "']";
+	//console.log(dataGroups);
+	
     return (
-    <div className="w3-third w3-container w3-margin-bottom">
+    <div className="w3-third w3-container w3-margin-bottom thumbnailContainer" data-groups={content.cat}>
 	<div className="w3-display-container">
-    <img src={content.imgUrl} className="thumbnail"/>
+	<div className={this.state.imgContentClass}><div className={this.state.imgLoaderClass}></div>
+    <img src={content.imgUrl} className="thumbnail" style={imgStyle} onLoad={this.handleImageLoaded.bind(this)}/>
+	</div>
 	{overlay}
 	</div>
 	<div className="w3-container w3-white w3-center"><p><b>{content.name}</b></p></div>
@@ -27,16 +47,42 @@ class Thumbnail extends React.Component {
 
 class Gallery extends React.Component {
 	
+	constructor(props) {
+		super(props);
+	}
+	
+	componentDidMount() {
+		// The elements are in the DOM, initialize a shuffle instance.
+		//var element = document.querySelector('.galleryGrid');
+		this.shuffle = new Shuffle(this.element, {
+			itemSelector: '.thumbnailContainer',
+			delimeter: ',',
+			sizer: this.sizer
+		 });
+	}
+  
+	componentDidUpdate() {
+		// Notify shuffle to dump the elements it's currently holding and consider
+		// all elements matching the `itemSelector` as new.
+		this.shuffle.resetItems();
+		this.shuffle.filter(this.props.cat);
+	}
+	
+	componentWillUnmount() {
+		// Dispose of shuffle when it will be removed from the DOM.
+		this.shuffle.destroy();
+		this.shuffle = null;
+	}
+	
 	handleLengthChange(data) {
 		//console.log(data);
 		this.props.length(data);
 	}
 	
   render() {
-
     const filterText = this.props.filterText.toLowerCase();
     const cat = this.props.cat;
-
+	
     const thumbnails = [];
     let lastCategory = null;
 
@@ -62,9 +108,17 @@ class Gallery extends React.Component {
 	const lastIndex = this.props.currentPage * this.props.itemPerPage;
 	const firstIndex = lastIndex - this.props.itemPerPage;
 	const newThumbnails = thumbnails.slice(firstIndex, lastIndex);
+	
+	const sizerStyle = {
+		position: "absolute",
+		width: "33.33333333%"
+	};
 		
     return (
-	<div className="w3-row-padding" onChange={this.handleLengthChange(thumbnails.length)}>{newThumbnails}</div>
+	<div ref={element => this.element = element} className="w3-row-padding" onChange={this.handleLengthChange(thumbnails.length)}>
+	{newThumbnails}
+	<div ref={element => this.sizer = element} style={sizerStyle}></div>
+	</div>
     );
   }
 }
@@ -119,7 +173,9 @@ class Selection extends React.Component
 	
 	handleChange(e) 
 	{
+		
 		this.props.onCatChange(e.target.value);
+		
 		//console.log(e.target.value);
 	}
   
@@ -302,10 +358,10 @@ const CONTENTS = [
 {name: 'Eclipse', cat: 'Software', desc:"", imgUrl: 'img/eclipse-800x188.png', demoUrl:"", repoUrl:""},
 {name: 'Microsoft Office', cat: 'Software', desc:"", imgUrl: 'img/2000px-Microsoft_Office_2013_logo_and_wordmark.svg.png', demoUrl:"", repoUrl:""},
 {name: 'Notepad++', cat: 'Software', desc:"", imgUrl: 'img/Notepad-Free-Download.png', demoUrl:"", repoUrl:""},
-{name: 'VirtualBox', cat: 'Software', desc:"", imgUrl: 'img/Virtualbox_logo.png', demoUrl:"img/Notepad-Free-Download.png", repoUrl:""},
+{name: 'VirtualBox', cat: 'Software', desc:"", imgUrl: 'img/Virtualbox_logo.png', demoUrl:"", repoUrl:""},
 {name: 'WMware Workstation', cat: 'Software', desc:"", imgUrl: 'img/e5a7ce73b7a4b30361e3186c73a78a19--vmware-workstation-operating-system.jpg', demoUrl:"", repoUrl:""},
-{name: 'WampServer', cat: 'Software', desc:"", imgUrl: 'img/Wampserver.png', demoUrl:"img/Notepad-Free-Download.png", repoUrl:""},
-{name: 'Secure Shell Client', cat: 'Software', desc:"", imgUrl: 'img/ssh.png', demoUrl:"img/Notepad-Free-Download.png", repoUrl:""},
+{name: 'WampServer', cat: 'Software', desc:"", imgUrl: 'img/Wampserver.png', demoUrl:"", repoUrl:""},
+{name: 'Secure Shell Client', cat: 'Software', desc:"", imgUrl: 'img/ssh.png', demoUrl:"", repoUrl:""},
 {name: 'MicroSoft Windows', cat: 'Operating System', desc:"", imgUrl: 'img/Windows_logo_Cyan_rgb_D.png', demoUrl:"", repoUrl:""},
 {name: 'Unix/Linux', cat: 'Operating System', desc:"", imgUrl: 'img/pic.jpg', demoUrl:"", repoUrl:""},
 {name: 'Heroku', cat: 'Cloud/Server', desc:"", imgUrl: 'img/heroku-logotype-vertical-purple1.png', demoUrl:"", repoUrl:""},

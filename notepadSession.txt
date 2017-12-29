@@ -1,8 +1,0 @@
-<NotepadPlus>
-    <Session activeView="0">
-        <mainView activeIndex="3">
-            <File firstVisibleLine="297" xOffset="0" scrollWidth="4725" startPos="2295" endPos="2261" selMode="0" lang="HTML" encoding="-1" filename="E:\Coding\wamp64\www\homepage\index.html" backupFilePath="" originalFileLastModifTimestamp="1510771811" mapFirstVisibleDisplayLine="-1" mapFirstVisibleDocLine="-1" mapLastVisibleDocLine="-1" mapNbLine="-1" mapHigherPos="-1" mapWidth="-1" mapHeight="-1" mapKByteInDoc="1147207680" mapWrapIndentMode="-1" mapIsWrap="no" />
-        </mainView>
-        <subView activeIndex="0" />
-    </Session>
-</NotepadPlus>
