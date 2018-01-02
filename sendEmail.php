@@ -7,6 +7,21 @@ $subject = $_POST["subject"];
 $email = $_POST["email"];
 $message = $_POST["message"];
 
+if($subject == null)
+{
+    $errMessage .= "Error: Please add a subject. <br>";
+}
+
+if($email == null)
+{
+    $errMessage .= "Error: Please add a returning Email address. <br>";  
+}
+
+if($message == null)
+{
+    $errMessage .= "Error: Please add a message. <br>";   
+}
+
 $to = "zheerikzeng@gmail.com";
 $message1 = "
 	<html>

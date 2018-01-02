@@ -107,6 +107,14 @@ function carousel(root) {
     
 }
 
+// Modal Image Gallery
+function openModal(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
 //Google map
 var myCenter = new google.maps.LatLng(43.6532, -79.3832);
 

@@ -358,20 +358,35 @@ class Carousel extends React.Component {
 	
 	constructor(props){
 		super(props);
+		
+		this.handleClick  = this.handleClick .bind(this);
 	}
+	
+	handleClick(content, e){
+		document.getElementById("img01").src = content.imgUrl;
+		document.getElementById("modal01").style.display = "block";
+		var captionText = document.getElementById("caption");
+		//captionText.innerHTML = content.alt;
+	}
+	
 	render(){
+		
+		const items = [];
+		
+		this.props.contents.forEach((content) => {
+			
+			items.push(
+			<img src={content.imgUrl} alt="" onClick={this.handleClick.bind(this, content)}/>
+			);
+			
+		});
+		
 		return (
-		<div class="carousel" data-gap="5">
+		<div class="carousel" data-gap="20">
 		<figure>
-			<img src="http://localhost/homepage/source/gallery/The_C_Programming_Language_logo.svg.png" alt="" />
-			<img src="http://localhost/homepage/source/gallery/b3f8b090-dedc-11e6-8252-d9f1e786360b-angular.svg" alt="" />
-			<img src="http://localhost/homepage/source/gallery/Bootstrap.png" alt="" />
-			<img src="http://localhost/homepage/source/gallery/cpp_logo.png" alt="" />
-			<img src="http://localhost/homepage/source/gallery/aws-final-logo.png" alt="" />
-			<img src="http://localhost/homepage/source/gallery/heroku-logotype-vertical-purple1.png" alt="" />
-			<img src="http://localhost/homepage/source/gallery/1200px-HTML5_logo_and_wordmark.svg.png" alt="" />
-			<img src="http://localhost/homepage/source/gallery/logo-2582747_960_720.png" alt="" />
+		{items}
 		</figure>
+		<br />
 		<nav>
 			<button class="nav prev">Prev</button>
 			<button class="nav next">Next</button>
@@ -397,7 +412,6 @@ class Contents extends React.Component {
 			</p>
 			<FilterableGallery contents = {this.props.galleryContents} />
 			</div>
-
 			<div class="bgimg-3 w3-display-container w3-opacity-min">
 			<div class="w3-display-middle">
 			<div class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-hover-grey scrollRevealLeft"> 
@@ -405,13 +419,11 @@ class Contents extends React.Component {
 			</div>
 			</div>
 			</div>
-
 			<div class="w3-content w3-container w3-padding-64" id="section3">
 			<h3 class="w3-center">MY WORK</h3>
 			<p class="w3-center"><em>Here are some of my latest work</em></p><br />
-
 			<div class="w3-container">
-			<Carousel />
+			<Carousel contents = {this.props.carouselContents}/>
 			</div>
 			</div>
 		</div>
@@ -454,8 +466,17 @@ const galleryContents = [
 {name: 'Heroku', cat: 'Cloud/Server', desc:"", imgUrl: 'source/gallery/heroku-logotype-vertical-purple1.png', demoUrl:"", repoUrl:""},
 {name: 'GoDaddy', cat: 'Cloud/Server', desc:"", imgUrl: 'source/gallery/aboutus1.png', demoUrl:"", repoUrl:""},
 {name: 'AWS', cat: 'Cloud/Server', desc:"", imgUrl: 'source/gallery/aws-final-logo.png', demoUrl:"", repoUrl:""},
-{name: 'GitHub', cat: 'Cloud/Server', desc:"", imgUrl: 'source/gallery/github.png', demoUrl:"", repoUrl:"", demoUrl:"", repoUrl:""},
+{name: 'GitHub', cat: 'Cloud/Server', desc:"", imgUrl: 'source/gallery/github.png', demoUrl:"", repoUrl:""},
 {name: 'WordPress', cat: 'Cloud/Server', desc:"", imgUrl: 'source/gallery/wordpress-logo-stacked-rgb.png', demoUrl:"", repoUrl:""}
+];
+
+const carouselContents = [
+{name: 'Social Media Appplication', desc:"", imgUrl: 'source/carousel/social.PNG', demoUrl:"", repoUrl:""},
+{name: 'Chat Application', desc:"", imgUrl: 'source/carousel/babbletext.jpg', demoUrl:"", repoUrl:""},
+{name: 'Weather Application', desc:"", imgUrl: 'source/carousel/weatherapp.PNG', demoUrl:"", repoUrl:""},
+{name: 'Location Distance Calculator', desc:"", imgUrl: 'source/carousel/distance.PNG', demoUrl:"", repoUrl:""},
+{name: 'MEAN Stack Registration/Authentication', desc:"", imgUrl: 'source/carousel/mean.PNG', demoUrl:"", repoUrl:""},
+{name: 'Caching Level Gallary', desc:"", imgUrl: 'source/carousel/gallery.PNG', demoUrl:"", repoUrl:""},
 ];
 
 galleryContents.sort(function(a, b){
@@ -467,7 +488,7 @@ galleryContents.sort(function(a, b){
 });
 
 ReactDOM.render(
-  <Contents galleryContents={galleryContents} />,
+  <Contents galleryContents={galleryContents} carouselContents={carouselContents}/>,
   document.getElementById('reactApp')
 );
 

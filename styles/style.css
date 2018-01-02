@@ -95,7 +95,7 @@ html,body
 
 #hero-vid {
 	backface-visibility:hidden;
-	background:url("../img/earth-view-from-satellite-space-systems-cover.jpg") no-repeat scroll 0 0 #000;
+	background:url("../source/parallax/earth-view-from-satellite-space-systems-cover.jpg") no-repeat scroll 0 0 #000;
 	background-size:cover;
 	bottom:0;
 	height:auto;
@@ -232,7 +232,7 @@ w3-display-middle {
   padding: 20px;
   -webkit-perspective: 500px;
           perspective: 500px;
-  overflow: hidden;
+  overflow: visible;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -251,7 +251,8 @@ w3-display-middle {
 }
 .carousel figure {
   margin: 0;
-  width: 69%;
+  width: 100%;
+  height: auto;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   -webkit-transition: -webkit-transform 0.5s;
@@ -261,12 +262,13 @@ w3-display-middle {
 }
 .carousel figure img {
 	width: 100%;
-	max-height: 500px;
+	height: 500px;
 	object-fit: contain;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	padding: 0 0px;
 }
+
 .carousel figure img:not(:first-of-type) {
   position: absolute;
   left: 0;

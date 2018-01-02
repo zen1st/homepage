@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+h2 {
+  text-align: center;
+  color: #555;
+  margin-bottom: 0;
+}
+
+.carousel {
+  padding: 20px;
+  -webkit-perspective: 500px;
+          perspective: 500px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.carousel > * {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+.carousel figure {
+  margin: 0;
+  width: 40%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+.carousel figure img {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 0px;
+}
+.carousel figure img:not(:first-of-type) {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.carousel nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 20px 0 0;
+}
+.carousel nav button {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  margin: 0 5px;
+  cursor: pointer;
+  color: #333;
+  background: none;
+  border: 1px solid;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+}
+</style>
+</head>
+<body>
+
+<h1>3D Rotating Carousel Examples</h1>
+
+<h2>Three images</h2>
+<div class="carousel">
+    <figure>
+        <img src="https://source.unsplash.com/EbuaKnSm8Zw/800x533" alt="Something something" onclick="onClick(this)" >
+        <img src="https://source.unsplash.com/kG38b7CFzTY/800x533" alt="" onclick="onClick(this)" >
+        <img src="https://source.unsplash.com/nvzvOPQW0gc/800x533" alt="" onclick="onClick(this)" >
+    </figure>
+    <nav>
+        <button class="nav prev">Prev</button>
+        <button class="nav next">Next</button>
+    </nav>
+</div>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+
+<h2>Four images</h2>
+<div class="carousel">
+    <figure>
+		<img src="https://source.unsplash.com/kG38b7CFzTY/800x533" alt="">
+        <img src="https://source.unsplash.com/EbuaKnSm8Zw/800x533" alt="">
+        <img src="https://source.unsplash.com/nvzvOPQW0gc/800x533" alt="">
+        <img src="https://source.unsplash.com/mCg0ZgD7BgU/800x533" alt="">
+    </figure>
+    <nav>
+        <button class="nav prev">Prev</button>
+        <button class="nav next">Next</button>
+    </nav>
+</div>
+
+<h2>Eight images</h2>
+<div class="carousel">
+    <figure>
+		<img src="https://source.unsplash.com/nvzvOPQW0gc/800x533" alt="">
+        <img src="https://source.unsplash.com/EbuaKnSm8Zw/800x533" alt="">
+        <img src="https://source.unsplash.com/kG38b7CFzTY/800x533" alt="">
+        <img src="https://source.unsplash.com/mCg0ZgD7BgU/800x533" alt="">
+        <img src="https://source.unsplash.com/VkwRmha1_tI/800x533" alt="">
+        <img src="https://source.unsplash.com/1FWICvPQdkY/800x533" alt="">
+        <img src="https://source.unsplash.com/bjhrzvzZeq4/800x533" alt="">
+        <img src="https://source.unsplash.com/7mUXaBBrhoA/800x533" alt="">
+    </figure>
+    <nav>
+        <button class="nav prev">Prev</button>
+        <button class="nav next">Next</button>
+    </nav>
+</div>
+
+<h2>Eight images, with 20px gap</h2>
+<div class="carousel" data-gap="20">
+    <figure>
+		<img src="https://source.unsplash.com/mCg0ZgD7BgU/800x533" alt="">
+        <img src="https://source.unsplash.com/EbuaKnSm8Zw/800x533" alt="">
+        <img src="https://source.unsplash.com/kG38b7CFzTY/800x533" alt="">
+        <img src="https://source.unsplash.com/nvzvOPQW0gc/800x533" alt="">
+        <img src="https://source.unsplash.com/VkwRmha1_tI/800x533" alt="">
+        <img src="https://source.unsplash.com/1FWICvPQdkY/800x533" alt="">
+        <img src="https://source.unsplash.com/bjhrzvzZeq4/800x533" alt="">
+        <img src="https://source.unsplash.com/7mUXaBBrhoA/800x533" alt="">
+    </figure>
+    <nav>
+        <button class="nav prev">Prev</button>
+        <button class="nav next">Next</button>
+    </nav>
+</div>
+
+<h2>Eight images, with 80px gap</h2>
+<div class="carousel" data-gap="80">
+    <figure>
+		<img src="https://source.unsplash.com/VkwRmha1_tI/800x533" alt="">
+        <img src="https://source.unsplash.com/EbuaKnSm8Zw/800x533" alt="">
+        <img src="https://source.unsplash.com/kG38b7CFzTY/800x533" alt="">
+        <img src="https://source.unsplash.com/nvzvOPQW0gc/800x533" alt="">
+        <img src="https://source.unsplash.com/mCg0ZgD7BgU/800x533" alt="">
+        <img src="https://source.unsplash.com/1FWICvPQdkY/800x533" alt="">
+        <img src="https://source.unsplash.com/bjhrzvzZeq4/800x533" alt="">
+        <img src="https://source.unsplash.com/7mUXaBBrhoA/800x533" alt="">
+    </figure>
+    <nav>
+        <button class="nav prev">Prev</button>
+        <button class="nav next">Next</button>
+    </nav>
+</div>
+
+<h2>Hidden backfaces</h2>
+<div class="carousel" data-gap="20" data-bfc>
+    <figure>
+		<img src="https://source.unsplash.com/bjhrzvzZeq4/800x533" alt="">
+        <img src="https://source.unsplash.com/EbuaKnSm8Zw/800x533" alt="">
+        <img src="https://source.unsplash.com/kG38b7CFzTY/800x533" alt="">
+        <img src="https://source.unsplash.com/nvzvOPQW0gc/800x533" alt="">
+        <img src="https://source.unsplash.com/mCg0ZgD7BgU/800x533" alt="">
+        <img src="https://source.unsplash.com/VkwRmha1_tI/800x533" alt="">
+        <img src="https://source.unsplash.com/1FWICvPQdkY/800x533" alt="">
+        <img src="https://source.unsplash.com/7mUXaBBrhoA/800x533" alt="">
+    </figure>
+    <nav>
+        <button class="nav prev">Prev</button>
+        <button class="nav next">Next</button>
+    </nav>
+</div>
+
+<script>
+window.addEventListener('load', () => {
+
+	var carousels = document.querySelectorAll('.carousel');
+	
+    for (var i = 0; i < carousels.length; i++) {
+        carousel(carousels[i]);
+    }
+});
+
+function carousel(root) {
+    var figure = root.querySelector('figure'),
+        nav = root.querySelector('nav'),
+        images = figure.children,
+        n = images.length,
+        gap = root.dataset.gap || 0,
+        bfc = 'bfc' in root.dataset,
+        theta =  2 * Math.PI / n,
+        currImage = 0 ;
+    
+    setupCarousel(n, parseFloat(getComputedStyle(images[0]).width));
+    window.addEventListener('resize', () => { 
+        setupCarousel(n, parseFloat(getComputedStyle(images[0]).width)) 
+    });
+
+    setupNavigation();
+
+    function setupCarousel(n, s) {
+	
+		var apothem = s / (2 * Math.tan(Math.PI / n));
+        
+        figure.style.transformOrigin = `50% 50% ${- apothem}px`;
+
+        for (var i = 0; i < n; i++)
+            images[i].style.padding = `${gap}px`;
+        for (i = 1; i < n; i++) {
+            images[i].style.transformOrigin = `50% 50% ${- apothem}px`;
+            images[i].style.transform = `rotateY(${i * theta}rad)`;
+        }
+        if (bfc)
+            for (i = 0; i < n; i++)
+                 images[i].style.backfaceVisibility = 'hidden';
+        
+        rotateCarousel(currImage);
+    }
+
+    function setupNavigation() {
+        nav.addEventListener('click', onClick, true);
+        
+        function onClick(e) {
+            e.stopPropagation();
+            
+            var t = e.target;
+            if (t.tagName.toUpperCase() != 'BUTTON')
+                return;
+            
+            if (t.classList.contains('next')) {
+                currImage++;
+            }
+            else {
+                currImage--;
+            }
+            
+            rotateCarousel(currImage);
+        }
+            
+    }
+
+    function rotateCarousel(imageIndex) {
+        figure.style.transform = `rotateY(${imageIndex * -theta}rad)`;
+    }
+    
+}
+
+// Modal Image Gallery
+function onClick(element) {
+console.log("hey");
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+</body>
+</html>
