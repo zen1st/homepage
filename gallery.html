@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+<script src="https://unpkg.com/shufflejs@5"></script>
+
+<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+<script type="text/babel" src="app2.jsx"></script> 
+
+<style>
+.thumbnailContainer{
+	width: 25%;
+}
+
+.sizer{
+position: absolute;
+width: 25%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 992px) {
+    .thumbnailContainer, .sizer{
+        width: 33.3333333333%;
+    }
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 768px) {
+    .thumbnailContainer, .sizer{
+        width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .thumbnailContainer, .sizer{
+        width: 100%;
+   }
+}
+
+.thumbnailContainer img {
+	object-fit: contain;
+	width: 100%;
+	height:100px;
+}
+.container {
+	position: relative;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+}
+
+.container:hover .overlay {
+  height: 20%;
+}
+
+.text {
+  white-space: nowrap; 
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+</style>
+</head>
+<body>
+
+<div id="reactApp"></div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+//window.sr = ScrollReveal();
+//sr.reveal('.thumbnailContainer');
+
+}, false);
+
+
+</script>
+</body>
+</html>

@@ -6,20 +6,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet/less" type="text/css" href="style.less"/>
+
+<link rel="stylesheet/less" type="text/css" href="styles/style.less"/>
 <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js" type="text/javascript"></script>
-<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet" href="styles/style.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://unpkg.com/shufflejs@5"></script>
+
 <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
-<script type="text/babel" src="App.jsx"></script> 
+<script type="text/babel" src="scripts/App.jsx"></script> 
 
+<script src="https://unpkg.com/shufflejs@5"></script>
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+
+<!-- Add Google Maps -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCLFYRhdYKcwa76LpZ9uj2XeltUrCn3kA"></script>
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 
@@ -65,7 +77,7 @@
 	</div>
 	</div>
 	
-    <video class="visible-desktop" id="hero-vid" poster="img/earth-view-from-satellite-space-systems-cover.jpg" autoplay loop muted>
+    <video class="visible-desktop" id="hero-vid" poster="img/parallax/earth-view-from-satellite-space-systems-cover.jpg" autoplay loop muted>
         <source type="video/mp4" src="img/ezgif-3-f5fb83adce.mp4"></source>
     </video>
     <div id="state" class="visible-desktop"><span class="fa fa-pause"></span></div>
@@ -78,9 +90,9 @@
   <h3 class="w3-center">ABOUT ME</h3>
   <p class="w3-center"><em>"The road to success is always under construction"</em></p>
 	<div class="w3-row">
-    <div class="w3-col m6 w3-center w3-padding-large">
+    <div class="w3-col m6 w3-center w3-padding-large scrollRevealLeft">
       <img src="img/thumbnail_hdImg_5780e61485bb9d54a71570e1af7c4d711480396017404.jpg" 
-	  class="w3-round w3-image w3-opacity w3-hover-opacity-off slideanim" alt="Photo of Me" width="500" height="333">
+	  class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
     </div>
     <div class="w3-col m6 w3-padding-large">
     <p>
@@ -106,77 +118,14 @@
 
 <!-- Second Parallax Image -->
 <div class="bgimg-2 w3-display-container w3-opacity-min">
-  <div class="w3-display-middle">
-    <span class="w3-xxlarge w3-text-white w3-wide">TECH SKILLS</span>
-  </div>
-</div>
-
-<!-- Container (Tech Section) -->
-<div class="w3-content w3-container w3-padding-64" id="section2">
-  <h3 class="w3-center">MY TECH STACK</h3>
-	<p class="w3-center"><em>Here are some of the programming languages, scripts, markups, frameworks, libraries, APIs, and environment that I'm experienced in.</em></p>
-  <div id="reactApp"></div>
-</div>
-
-<!-- Modal for full size images on click-->
-<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
-  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-    <img id="img01" class="w3-image">
-    <p id="caption" class="w3-opacity w3-large"></p>
-  </div>
-</div>
-
-<!-- Third Parallax Image -->
-<div class="bgimg-3 w3-display-container w3-opacity-min">
-  <div class="w3-display-middle">
-    <span class="w3-xxlarge w3-text-white w3-wide w3-grey w3-padding-xlarge w3-hover-grey">PROJECTS</span>
-  </div>
-</div>
-
-<div class="w3-content w3-container w3-padding-64" id="section3">
-  <h3 class="w3-center">MY WORK</h3>
-  <p class="w3-center"><em>Here are some of my latest work</em></p><br>
-
-<div class="w3-container">
-
-<div class="w3-display-container">
-  <img class="mySlides" 
-  src="https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg" 
-  style="width:100%; height:500px; object-fit: contain;">
-  <img class="mySlides" 
-  src="https://imagejournal.org/wp-content/uploads/bb-plugin/cache/23466317216_b99485ba14_o-panorama.jpg" 
-  style="width:100%; height:500px; object-fit: contain;">
-  <img class="mySlides" 
-  src="https://s3-us-west-1.amazonaws.com/powr/defaults/image-slider2.jpg" 
-  style="width:100%; height:500px; object-fit: contain;">
-  
-  <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
-  <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
-</div>
-
-  <div class="w3-row-padding w3-section">
-    <div class="w3-col s4">
-      <img class="demo w3-opacity w3-hover-opacity-off" 
-	  src="https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg" 
-	  style="width:100%; height:100px; object-fit: contain;" 
-	  onclick="currentDiv(1)">
-    </div>
-    <div class="w3-col s4">
-      <img class="demo w3-opacity w3-hover-opacity-off" 
-	  src="https://imagejournal.org/wp-content/uploads/bb-plugin/cache/23466317216_b99485ba14_o-panorama.jpg" 
-	  style="width:100%; height:100px; object-fit: contain;" 
-	  onclick="currentDiv(2)">
-    </div>
-    <div class="w3-col s4">
-      <img class="demo w3-opacity w3-hover-opacity-off" 
-	  src="https://s3-us-west-1.amazonaws.com/powr/defaults/image-slider2.jpg" 
-	  style="width:100%; height:100px; object-fit: contain;" onclick="currentDiv(3)">
-    </div>
-  </div>
-  
+<div class="w3-display-middle" style="white-space:nowrap;">
+	<div class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-hover-grey scrollRevealRight"> 
+	TECH SKILLS
+	</div>
 </div>
 </div>
+
+<div id="reactApp"></div>
 
 <!-- 4th Parallax Image -->
 <div class="bgimg-4 w3-display-container w3-opacity-min">
@@ -223,12 +172,6 @@
   </div>
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
 </footer>
-<script src="js/script.js"></script>
-<!-- Add Google Maps -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
-<!--
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
+<script src="scripts/script.js"></script>
 </body>
 </html>
