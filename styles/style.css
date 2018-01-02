@@ -52,25 +52,25 @@ html,body
 
 /* First image (Logo. Full height) */
 .bgimg-1 {
-    background-image: url("../img/parallax/earth-view-from-satellite-space-systems-cover.jpg");
+    background-image: url("../source/parallax/earth-view-from-satellite-space-systems-cover.jpg");
     min-height: 100%;
 }
 
 /* Second image (Tech) */
 .bgimg-2 {
-    background-image: url("../img/parallax/1490701337436.jpg");
+    background-image: url("../source/parallax/1490701337436.jpg");
     min-height: 400px;
 }
 
 /* Second image (Projects) */
 .bgimg-3 {
-    background-image: url("../img/parallax/folders-facebook-cover-timeline-banner-for-fb.jpg");
+    background-image: url("../source/parallax/folders-facebook-cover-timeline-banner-for-fb.jpg");
     min-height: 400px;
 }
 
 /* Fourth image (Contact) */
 .bgimg-4 {
-    background-image: url("../img/parallax/contact3.jpg");
+    background-image: url("../source/parallax/contact3.jpg");
     min-height: 400px;
 }
 
