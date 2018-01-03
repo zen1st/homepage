@@ -242,7 +242,15 @@ width: 25%;
 }
 /* Gallery (end)*/
 
-.mySlides {display:none}
+#section3{
+	overflow:visible;
+}
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+	#section3{
+		overflow:hidden;
+   }
+}
 
 /* Carousel (start)*/
 .carousel {

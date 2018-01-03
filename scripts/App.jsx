@@ -217,24 +217,24 @@ class Pagination extends React.Component
 		window.addEventListener("resize", this.handleDimensionChange);
 		
 		if(window.innerWidth < 601){
-			this.props.itemsPerPage(3);
-			this.setState({itemsPerPage:3});
-			console.log("window.innerWidth < 601");
+			this.props.itemsPerPage(4);
+			this.setState({itemsPerPage:4});
+			//console.log("window.innerWidth < 601");
 		}
 		else if(window.innerWidth < 769){
 			this.props.itemsPerPage(8);
 			this.setState({itemsPerPage:8});
-			console.log("window.innerWidth < 769");
+			//console.log("window.innerWidth < 769");
 		}
 		else if(window.innerWidth < 993){
 			this.props.itemsPerPage(9);
 			this.setState({itemsPerPage:9});
-			console.log("window.innerWidth < 993");
+			//console.log("window.innerWidth < 993");
 		}
 		else if(window.innerWidth >= 993){
-			this.props.itemsPerPage(8);	
-			this.setState({itemsPerPage:8});
-			console.log("window.innerWidth >= 993");
+			this.props.itemsPerPage(12);	
+			this.setState({itemsPerPage:12});
+			//console.log("window.innerWidth >= 993");
 		}
 	}
 	
@@ -243,24 +243,24 @@ class Pagination extends React.Component
 		//console.log("width: "+ window.innerWidth + " height: "+ window.innerWidth);
 		
 		if(window.innerWidth < 601){
-			this.props.itemsPerPage(3);
-			this.setState({itemsPerPage:3});
-			console.log("window.innerWidth < 601");
+			this.props.itemsPerPage(4);
+			this.setState({itemsPerPage:4});
+			//console.log("window.innerWidth < 601");
 		}
 		else if(window.innerWidth < 769){
 			this.props.itemsPerPage(8);
 			this.setState({itemsPerPage:8});
-			console.log("window.innerWidth < 769");
+			//console.log("window.innerWidth < 769");
 		}
 		else if(window.innerWidth < 993){
 			this.props.itemsPerPage(9);
 			this.setState({itemsPerPage:9});
-			console.log("window.innerWidth < 993");
+			//console.log("window.innerWidth < 993");
 		}
 		else if(window.innerWidth >= 993){
-			this.props.itemsPerPage(8);	
-			this.setState({itemsPerPage:8});
-			console.log("window.innerWidth >= 993");
+			this.props.itemsPerPage(12);	
+			this.setState({itemsPerPage:12});
+			//console.log("window.innerWidth >= 993");
 		}
     }
 	
