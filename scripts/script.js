@@ -81,7 +81,9 @@ function carousel(root) {
 
     function setupNavigation() {
         nav.addEventListener('click', onClick, true);
-        
+		
+        figure.addEventListener("wheel", onScroll, true);
+	
         function onClick(e) {
             e.stopPropagation();
             
@@ -98,21 +100,29 @@ function carousel(root) {
             
             rotateCarousel(currImage);
         }
-            
+		
+		function onScroll(e){
+			
+			e.stopPropagation();
+			e.preventDefault();
+			
+			//console.log(e.deltaY);
+			
+			if (e.deltaY >= 100) {
+                currImage++;
+            }
+            else if(e.deltaY <= -100) {
+                currImage--;
+            }
+			rotateCarousel(currImage);
+		}
+		
     }
 
     function rotateCarousel(imageIndex) {
         figure.style.transform = `rotateY(${imageIndex * -theta}rad)`;
     }
-    
-}
 
-// Modal Image Gallery
-function openModal(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
 }
 
 //Google map

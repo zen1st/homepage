@@ -70,7 +70,7 @@ class Gallery extends React.Component {
 		});
 		
 		//this.shuffle.update();
-		//this.shuffle.resetItems();
+		this.shuffle.resetItems();
 	}
 	
 	render() {
@@ -244,42 +244,42 @@ class FilterableGallery extends React.Component {
 }
 
 const CONTENTS = [
-{name: 'HTML5', cat: 'Frontend', desc:"", imgUrl: 'img/1200px-HTML5_logo_and_wordmark.svg.png', demoUrl:"", repoUrl:""},
-{name: 'XML', cat: 'Frontend', desc:"", imgUrl: 'img/xml-file.png', demoUrl:"", repoUrl:""}, 
-{name: 'CSS3', cat: 'Frontend', desc:"", imgUrl: 'img/logo-2582747_960_720.png', demoUrl:"", repoUrl:""},
-{name: 'SASS', cat: 'Frontend', desc:"", imgUrl: 'img/logo-b6e1ef6e.svg', demoUrl:"", repoUrl:""},
-{name: 'LESS', cat: 'Frontend', desc:"", imgUrl: 'img/less_logo.png', demoUrl:"", repoUrl:""},
-{name: 'Bootstrap', cat: 'Frontend', desc:"", imgUrl: 'img/Bootstrap.png', demoUrl:"", repoUrl:""},
-{name: 'Wordpress', cat: 'Frontend', desc:"", imgUrl: 'img/wordpress-logo-stacked-rgb.png', demoUrl:"", repoUrl:""},
-{name: 'JavaScript', cat: 'Frontend', desc:"", imgUrl: 'img/javascript_logo.png', demoUrl:"", repoUrl:""},
-{name: 'jQuery', cat: 'Frontend', desc:"",  imgUrl: 'img/jquery-icon.png', demoUrl:"", repoUrl:""},
-{name: 'TypeScript', cat: 'Frontend', desc:"", imgUrl: 'img/3e2b342616822f8eabc9dd393840db4a.png', demoUrl:"", repoUrl:""},
-{name: 'AngularJS', cat: 'Frontend', desc:"", imgUrl: 'img/angularjs.png', demoUrl:"", repoUrl:""},
-{name: 'Angular', cat: 'Frontend', desc:"", imgUrl: 'img/b3f8b090-dedc-11e6-8252-d9f1e786360b-angular.svg', demoUrl:"http://www.google.ca", repoUrl:""},
-{name: 'ReactJS', cat: 'Frontend', desc:"", imgUrl: 'img/react-logo-300x289.png', demoUrl:"", repoUrl:""},
-{name: 'Java', cat: 'Backend', desc:"", imgUrl: 'img/3163796423.webp', demoUrl:"", repoUrl:""},
-{name: 'Java Spring', cat: 'Backend', desc:"", imgUrl: 'img/spring-by-pivotal-9066b55828deb3c10e27e609af322c40.png', demoUrl:"", repoUrl:""},
-{name: 'PHP', cat: 'Backend', desc:"", imgUrl: 'img/v5kl.png', demoUrl:"", repoUrl:""},
-{name: 'C', cat: 'Backend', desc:"", imgUrl: 'img/The_C_Programming_Language_logo.svg.png', demoUrl:"", repoUrl:""},
-{name: 'C++', cat: 'Backend', desc:"", imgUrl: 'img/cpp_logo.png', demoUrl:"", repoUrl:""},
-{name: 'Python', cat: 'Backend', desc:"", imgUrl: 'img/python-logo.png', demoUrl:"", repoUrl:""},
-{name: 'Node.JS', cat: 'Backend', desc:"", imgUrl: 'img/nodejs_logo.png', demoUrl:"", repoUrl:""},
-{name: 'MySQL', cat: 'Database', desc:"", imgUrl: 'img/MySQL-logo-759x494.png', demoUrl:"", repoUrl:""},
-{name: 'MongoDB', cat: 'Database', desc:"", imgUrl: 'img/mongodb-gui-tools.png', demoUrl:"", repoUrl:""},
-{name: 'Eclipse', cat: 'Software', desc:"", imgUrl: 'img/eclipse-800x188.png', demoUrl:"", repoUrl:""},
-{name: 'Microsoft Office', cat: 'Software', desc:"", imgUrl: 'img/2000px-Microsoft_Office_2013_logo_and_wordmark.svg.png', demoUrl:"", repoUrl:""},
-{name: 'Notepad++', cat: 'Software', desc:"", imgUrl: 'img/Notepad-Free-Download.png', demoUrl:"", repoUrl:""},
-{name: 'VirtualBox', cat: 'Software', desc:"", imgUrl: 'img/Virtualbox_logo.png', demoUrl:"", repoUrl:""},
-{name: 'WMware Workstation', cat: 'Software', desc:"", imgUrl: 'img/e5a7ce73b7a4b30361e3186c73a78a19--vmware-workstation-operating-system.jpg', demoUrl:"", repoUrl:""},
-{name: 'WampServer', cat: 'Software', desc:"", imgUrl: 'img/Wampserver.png', demoUrl:"", repoUrl:""},
-{name: 'Secure Shell Client', cat: 'Software', desc:"", imgUrl: 'img/ssh.png', demoUrl:"", repoUrl:""},
-{name: 'MicroSoft Windows', cat: 'Operating System', desc:"", imgUrl: 'img/Windows_logo_Cyan_rgb_D.png', demoUrl:"", repoUrl:""},
-{name: 'Unix/Linux', cat: 'Operating System', desc:"", imgUrl: 'img/pic.jpg', demoUrl:"", repoUrl:""},
-{name: 'Heroku', cat: 'Cloud/Server', desc:"", imgUrl: 'img/heroku-logotype-vertical-purple1.png', demoUrl:"", repoUrl:""},
-{name: 'GoDaddy', cat: 'Cloud/Server', desc:"", imgUrl: 'img/aboutus1.png', demoUrl:"", repoUrl:""},
-{name: 'AWS', cat: 'Cloud/Server', desc:"", imgUrl: 'img/aws-final-logo.png', demoUrl:"", repoUrl:""},
-{name: 'GitHub', cat: 'Cloud/Server', desc:"", imgUrl: 'img/github.png', demoUrl:"", repoUrl:"", demoUrl:"", repoUrl:""},
-{name: 'WordPress', cat: 'Cloud/Server', desc:"", imgUrl: 'img/wordpress-logo-stacked-rgb.png', demoUrl:"", repoUrl:""}
+{name: 'HTML5', cat: 'Frontend', desc:"", imgUrl: 'source/gallery/1200px-HTML5_logo_and_wordmark.svg.png', demoUrl:"", repoUrl:""},
+{name: 'XML', cat: 'Frontend', desc:"", imgUrl: 'source/gallery/xml-file.png', demoUrl:"", repoUrl:""}, 
+{name: 'CSS3', cat: 'Frontend', desc:"", imgUrl: 'source/gallery/logo-2582747_960_720.png', demoUrl:"", repoUrl:""},
+{name: 'SASS', cat: 'Frontend', desc:"", imgUrl: 'source/gallery/logo-b6e1ef6e.svg', demoUrl:"", repoUrl:""},
+{name: 'LESS', cat: 'Frontend', desc:"", imgUrl: 'source/gallery/less_logo.png', demoUrl:"", repoUrl:""},
+{name: 'Bootstrap', cat: 'Frontend', desc:"", imgUrl: 'source/gallery/Bootstrap.png', demoUrl:"", repoUrl:""},
+{name: 'Wordpress', cat: 'Frontend', desc:"", imgUrl: 'source/gallery/wordpress-logo-stacked-rgb.png', demoUrl:"", repoUrl:""},
+{name: 'JavaScript', cat: 'Frontend', desc:"", imgUrl: 'source/gallery/javascript_logo.png', demoUrl:"", repoUrl:""},
+{name: 'jQuery', cat: 'Frontend', desc:"",  imgUrl: 'source/gallery/jquery-icon.png', demoUrl:"", repoUrl:""},
+{name: 'TypeScript', cat: 'Frontend', desc:"", imgUrl: 'source/gallery/3e2b342616822f8eabc9dd393840db4a.png', demoUrl:"", repoUrl:""},
+{name: 'AngularJS', cat: 'Frontend', desc:"", imgUrl: 'source/gallery/angularjs.png', demoUrl:"", repoUrl:""},
+{name: 'Angular', cat: 'Frontend', desc:"", imgUrl: 'source/gallery/b3f8b090-dedc-11e6-8252-d9f1e786360b-angular.svg', demoUrl:"http://www.google.ca", repoUrl:""},
+{name: 'ReactJS', cat: 'Frontend', desc:"", imgUrl: 'source/gallery/react-logo-300x289.png', demoUrl:"", repoUrl:""},
+{name: 'Java', cat: 'Backend', desc:"", imgUrl: 'source/gallery/3163796423.webp', demoUrl:"", repoUrl:""},
+{name: 'Java Spring', cat: 'Backend', desc:"", imgUrl: 'source/gallery/spring-by-pivotal-9066b55828deb3c10e27e609af322c40.png', demoUrl:"", repoUrl:""},
+{name: 'PHP', cat: 'Backend', desc:"", imgUrl: 'source/gallery/v5kl.png', demoUrl:"", repoUrl:""},
+{name: 'C', cat: 'Backend', desc:"", imgUrl: 'source/gallery/The_C_Programming_Language_logo.svg.png', demoUrl:"", repoUrl:""},
+{name: 'C++', cat: 'Backend', desc:"", imgUrl: 'source/gallery/cpp_logo.png', demoUrl:"", repoUrl:""},
+{name: 'Python', cat: 'Backend', desc:"", imgUrl: 'source/gallery/python-logo.png', demoUrl:"", repoUrl:""},
+{name: 'Node.JS', cat: 'Backend', desc:"", imgUrl: 'source/gallery/nodejs_logo.png', demoUrl:"", repoUrl:""},
+{name: 'MySQL', cat: 'Database', desc:"", imgUrl: 'source/gallery/MySQL-logo-759x494.png', demoUrl:"", repoUrl:""},
+{name: 'MongoDB', cat: 'Database', desc:"", imgUrl: 'source/gallery/mongodb-gui-tools.png', demoUrl:"", repoUrl:""},
+{name: 'Eclipse', cat: 'Software', desc:"", imgUrl: 'source/gallery/eclipse-800x188.png', demoUrl:"", repoUrl:""},
+{name: 'Microsoft Office', cat: 'Software', desc:"", imgUrl: 'source/gallery/2000px-Microsoft_Office_2013_logo_and_wordmark.svg.png', demoUrl:"", repoUrl:""},
+{name: 'Notepad++', cat: 'Software', desc:"", imgUrl: 'source/gallery/Notepad-Free-Download.png', demoUrl:"", repoUrl:""},
+{name: 'VirtualBox', cat: 'Software', desc:"", imgUrl: 'source/gallery/Virtualbox_logo.png', demoUrl:"", repoUrl:""},
+{name: 'WMware Workstation', cat: 'Software', desc:"", imgUrl: 'source/gallery/e5a7ce73b7a4b30361e3186c73a78a19--vmware-workstation-operating-system.jpg', demoUrl:"", repoUrl:""},
+{name: 'WampServer', cat: 'Software', desc:"", imgUrl: 'source/gallery/Wampserver.png', demoUrl:"", repoUrl:""},
+{name: 'Secure Shell Client', cat: 'Software', desc:"", imgUrl: 'source/gallery/ssh.png', demoUrl:"", repoUrl:""},
+{name: 'MicroSoft Windows', cat: 'Operating System', desc:"", imgUrl: 'source/gallery/Windows_logo_Cyan_rgb_D.png', demoUrl:"", repoUrl:""},
+{name: 'Unix/Linux', cat: 'Operating System', desc:"", imgUrl: 'source/gallery/pic.jpg', demoUrl:"", repoUrl:""},
+{name: 'Heroku', cat: 'Cloud/Server', desc:"", imgUrl: 'source/gallery/heroku-logotype-vertical-purple1.png', demoUrl:"", repoUrl:""},
+{name: 'GoDaddy', cat: 'Cloud/Server', desc:"", imgUrl: 'source/gallery/aboutus1.png', demoUrl:"", repoUrl:""},
+{name: 'AWS', cat: 'Cloud/Server', desc:"", imgUrl: 'source/gallery/aws-final-logo.png', demoUrl:"", repoUrl:""},
+{name: 'GitHub', cat: 'Cloud/Server', desc:"", imgUrl: 'source/gallery/github.png', demoUrl:"", repoUrl:"", demoUrl:"", repoUrl:""},
+{name: 'WordPress', cat: 'Cloud/Server', desc:"", imgUrl: 'source/gallery/wordpress-logo-stacked-rgb.png', demoUrl:"", repoUrl:""}
 ];
 
 ReactDOM.render(

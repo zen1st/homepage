@@ -135,6 +135,7 @@ html,body
 w3-display-middle {
 	white-space:nowrap;
 }
+
 #mainContent {
 	background-color:#ffffff;
 	position:relative;
@@ -142,6 +143,42 @@ w3-display-middle {
 }
 
 /* Gallery (start)*/
+.thumbnailContainer{
+	width: 25%;
+}
+
+.sizer{
+position: absolute;
+width: 25%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 992px) {
+    .thumbnailContainer, .sizer{
+        width: 33.3333333333%;
+    }
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 768px) {
+    .thumbnailContainer, .sizer{
+        width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .thumbnailContainer, .sizer{
+        width: 100%;
+   }
+}
+
+.thumbnailContainer img {
+	object-fit: contain;
+	width: 100%;
+	height:100px;
+}
+
 .w3-display-container:hover .overlay {
     height: 20%;
 }
@@ -177,26 +214,6 @@ w3-display-middle {
   100% { transform: rotate(720deg); }
 }
 
-.thumbnail{
-	object-fit: contain;
-    width: 100%;
-    height: 225px;
-}
-
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media (max-width: 800px) {
-	.thumbnail {
-		height: 250px;
-	}
-}
-
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media (max-width: 600px) {
-	.thumbnail {
-		height: 375px;
-	}
-}
-
 .overlay {
     position: absolute;
     bottom: 0;
@@ -230,8 +247,9 @@ w3-display-middle {
 /* Carousel (start)*/
 .carousel {
   padding: 20px;
-  -webkit-perspective: 500px;
-          perspective: 500px;
+  /*perspective : carousel width = 500px : 40%*/ 
+  -webkit-perspective: 1250px;
+          perspective: 1250px;
   overflow: visible;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -252,7 +270,6 @@ w3-display-middle {
 .carousel figure {
   margin: 0;
   width: 100%;
-  height: auto;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   -webkit-transition: -webkit-transform 0.5s;
